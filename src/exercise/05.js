@@ -15,7 +15,7 @@ import '../box-styles.css'
 const smallBox = (
   <div
     className="box box--small"
-    style={{background: 'lightBlue', fontStyle: 'italic'}}
+    style={{background: 'lightblue', fontStyle: 'italic'}}
   >
     small lightblue box
   </div>
