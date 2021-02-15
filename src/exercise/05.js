@@ -4,37 +4,32 @@
 import * as React from 'react'
 import '../box-styles.css'
 
-// 💰 Use the className for the size and style (backgroundColor) for the color
-// 💰 each of the elements should also have the "box" className applied
+const Box = ({size, style, ...otherProps}) => {
+  return (
+    <div
+      className={`box ${size ? `box--${size}` : ''}`}
+      style={{...style, fontStyle: 'italic'}}
+      {...otherProps}
+    />
+  )
+}
 
-// 🐨 add a className prop to each of these and apply the correct class names
-// 💰 Here are the available class names: box, box--large, box--medium, box--small
-
-// 🐨 add a style prop to each of them as well so their background color
-// matches what the text says it should be as well as `fontStyle: 'italic'`
 const smallBox = (
-  <div
-    className="box box--small"
-    style={{background: 'lightblue', fontStyle: 'italic'}}
-  >
+  <Box size="small" style={{background: 'lightblue'}}>
     small lightblue box
-  </div>
+  </Box>
 )
+
 const mediumBox = (
-  <div
-    className="box box--medium"
-    style={{background: 'pink', fontStyle: 'italic'}}
-  >
+  <Box size="medium" style={{background: 'pink'}}>
     medium pink box
-  </div>
+  </Box>
 )
+
 const largeBox = (
-  <div
-    className="box box--large"
-    style={{background: 'orange', fontStyle: 'italic'}}
-  >
+  <Box size="large" style={{background: 'orange'}}>
     large orange box
-  </div>
+  </Box>
 )
 
 function App() {
